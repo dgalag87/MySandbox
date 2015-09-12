@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Style Sheet -->
+<style type="text/css">
+               
+                #headcust{
+                                font: 20px arial, sans-serif;
+                                font-variant: small-caps;
+                                font-weight: bold;
+                                text-decoration: underline;
+                }
+               
+                #custform{
+                                font: 12px arial, sans-serif;
+                                font-variant: small-caps;
+                }
+               
+                /*Highlight the cell on hover*/
+  input:focus{
+                background-color: #ffff99;
+}
+    .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+ 
+</style>
+</head>
+</html>
