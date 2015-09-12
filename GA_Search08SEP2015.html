@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<!--Bring in jquery libary -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+
+<!--Write Script to fuzzy match fields-->
+<script>
+/*
+function func(){
+//retrieve the input values
+    //make character values case insensitive
+                var ftnm = document.getElementById("fname").value.toLowerCase();  //first name
+                var ltnm = document.getElementById("lname").value.toLowerCase();  //last name       
+                var full = ftnm + ltnm; //full name...all lowercase, no spaces 
+                var mmnm = document.getElementById("mtname").value.toLowerCase();  //maternal last name
+                var ddnm = document.getElementById("ptname").value.toLowerCase();  //paternal last name
+                var phnm = document.getElementById("phone").value;  //phone number            
+                var idnm = document.getElementById("fname").value;  //id number
+                var dobs = document.getElementById("dob").value;    //date of birth
+                for (i= 0; i<l; i++){
+                                //Search First Name
+                                if (ftnm != '' and json[i].FirstName == ftnm){
+                                        var outputds[i] = json[i].Firstname;      //Query syntax here str.search maybe?
+                                }else{
+                                                break; //move to the next if statement if first name is blank
+                                }
+                                //Search Last Name
+                                if (ltnm != ''){
+                                                //Query syntax here str.search maybe?
+                                }else{
+                                                break; //move to the next if statement if last name is blank
+                                }
+                                //Search Full Name
+                                if (full != ''){
+                                                //Query syntax here str.search maybe?
+                                }else{
+                                                break; //move to the next if statement if full name is blank
+                                }
+                                document.getElementById("_h3").innerHTML = "There is/are matching record(s)";
+                }
+} */
+    
+//This is how to return output to the input page!
+function test(){    
+                var ftnm = document.getElementById("fname").value.toLowerCase().replace(/\s|-|_/, '');  //first name
+                var ltnm = document.getElementById("lname").value.toLowerCase();  //last name       
+                var full = ftnm + ltnm; //full name 
+    document.getElementById("_out").innerHTML =full;}
+</script>
+
+<html>
+<body>    
+<!-- Title of Page -->
+<h1 id= "headcust"> Particpant Search Tool </h1>
+ 
+<!-- Create the form for searching for study particpants onsubmit= "search()" target= "_blank" -->
+<form id= "custform" method= "post">
+<fieldset>
+    
+First name:<br>
+<input id= "fname" type="text">
+<br>
+<br>
+ 
+Last name:<br>
+<input id= "lname" type="text" maxlength= '40' >
+<br>
+<br>
+ 
+Maternal Name:<br>
+<input id= "mtname" type="text">
+<br>
+<br>
+
+Paternal Name:<br>
+<input id= "ptname" type="text">
+<br>
+<br>
+    
+Phone Number:<br>
+<input id= "phone" type="tel">
+<br>
+<br>
+ 
+ID Number:<br>
+<input id= "idnum" type="tel">
+<br>
+<br>
+ 
+DOB:<br>
+<input id= "dob" type="date">
+<br>
+<br>
+</fieldset>
+</form>
+
+<br>
+<input type="submit" onclick= 'test();'>
+
+<p id='_out'></p>
+
+ 
+</body>
+
+</html>
+ 
+<!-- Style Sheet -->
+<style type="text/css">
+               
+                #headcust{
+                                font: 20px arial, sans-serif;
+                                font-variant: small-caps;
+                                font-weight: bold;
+                                text-decoration: underline;
+                }
+               
+                #custform{
+                                font: 12px arial, sans-serif;
+                                font-variant: small-caps;
+                }
+               
+                /*Highlight the cell on hover*/
+  input:focus{
+                background-color: #ffff99;
+}
+    .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+ 
+</style>
